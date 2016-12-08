@@ -1,0 +1,73 @@
+# Project: JVM - Grupo 2
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = src/attributes.o src/baseTypes.o src/classe.o src/classeLeitor.o src/classFlags.o src/constantPool.o src/fields.o src/frame.o src/heap.o src/interfaces.o src/localVariables.o src/methodArea.o src/methods.o src/operacoes.o src/pilhaOperandos.o src/run.o
+LINKOBJ  = src/attributes.o src/baseTypes.o src/classe.o src/classeLeitor.o src/classFlags.o src/constantPool.o src/fields.o src/frame.o src/heap.o src/interfaces.o src/localVariables.o src/methodArea.o src/methods.o src/operacoes.o src/pilhaOperandos.o src/run.o
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = "JVM - Grupo 2.exe"
+CXXFLAGS = $(CXXINCS) -std=c++11
+CFLAGS   = $(INCS) 
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+src/attributes.o: src/attributes.cpp
+	$(CPP) -c src/attributes.cpp -o src/attributes.o $(CXXFLAGS)
+
+src/baseTypes.o: src/baseTypes.cpp
+	$(CPP) -c src/baseTypes.cpp -o src/baseTypes.o $(CXXFLAGS)
+
+src/classe.o: src/classe.cpp
+	$(CPP) -c src/classe.cpp -o src/classe.o $(CXXFLAGS)
+
+src/classeLeitor.o: src/classeLeitor.cpp
+	$(CPP) -c src/classeLeitor.cpp -o src/classeLeitor.o $(CXXFLAGS)
+
+src/classFlags.o: src/classFlags.cpp
+	$(CPP) -c src/classFlags.cpp -o src/classFlags.o $(CXXFLAGS)
+
+src/constantPool.o: src/constantPool.cpp
+	$(CPP) -c src/constantPool.cpp -o src/constantPool.o $(CXXFLAGS)
+
+src/fields.o: src/fields.cpp
+	$(CPP) -c src/fields.cpp -o src/fields.o $(CXXFLAGS)
+
+src/frame.o: src/frame.cpp
+	$(CPP) -c src/frame.cpp -o src/frame.o $(CXXFLAGS)
+
+src/heap.o: src/heap.cpp
+	$(CPP) -c src/heap.cpp -o src/heap.o $(CXXFLAGS)
+
+src/interfaces.o: src/interfaces.cpp
+	$(CPP) -c src/interfaces.cpp -o src/interfaces.o $(CXXFLAGS)
+
+src/localVariables.o: src/localVariables.cpp
+	$(CPP) -c src/localVariables.cpp -o src/localVariables.o $(CXXFLAGS)
+
+src/methodArea.o: src/methodArea.cpp
+	$(CPP) -c src/methodArea.cpp -o src/methodArea.o $(CXXFLAGS)
+
+src/methods.o: src/methods.cpp
+	$(CPP) -c src/methods.cpp -o src/methods.o $(CXXFLAGS)
+
+src/operacoes.o: src/operacoes.cpp
+	$(CPP) -c src/operacoes.cpp -o src/operacoes.o $(CXXFLAGS)
+
+src/pilhaOperandos.o: src/pilhaOperandos.cpp
+	$(CPP) -c src/pilhaOperandos.cpp -o src/pilhaOperandos.o $(CXXFLAGS)
+
+src/run.o: src/run.cpp
+	$(CPP) -c src/run.cpp -o src/run.o $(CXXFLAGS)
